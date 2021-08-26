@@ -16,7 +16,12 @@ if (BUILD_COVERAGE_UNIT_TESTS)
 endif()
 
 # common libs
+enable_testing()
+
 add_subdirectory(googletest-master)
 add_subdirectory(DynamicEvents)
 
 add_subdirectory(SnakeController)
+
+
+#add_test(tests game_test)
