@@ -23,7 +23,7 @@ set(MOCK_LIST
 )
 set(UT_DRIVER ${TARGET_NAME}_UT)
 add_executable(${UT_DRIVER} ${TEST_SOURCES} ${MOCK_LIST})
-target_link_libraries(${UT_DRIVER} ${TARGET_NAME} gtest_main gmock)
+target_link_libraries(${UT_DRIVER} ${TARGET_NAME} gmock_main gtest gmock)
 
 if (BUILD_COVERAGE_UNIT_TESTS)
     set_target_properties(${TARGET_NAME} PROPERTIES COMPILE_FLAGS ${CMAKE_CXX_FLAGS_COVERAGE})

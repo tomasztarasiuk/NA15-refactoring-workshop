@@ -16,12 +16,13 @@ if (BUILD_COVERAGE_UNIT_TESTS)
 endif()
 
 # common libs
-enable_testing()
+include(cmake/GTest.cmake)
 
-add_subdirectory(googletest-master)
+enable_testing()
 add_subdirectory(DynamicEvents)
 
 add_subdirectory(SnakeController)
 
-
-#add_test(tests game_test)
+add_custom_target(SnakeTests
+                  COMMAND "./SnakeController/SnakeController_UT"
+                  DEPENDS SnakeController_UT)
